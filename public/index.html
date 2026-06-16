@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Repo Observatory — find the most active GitHub repos by topic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Repo Observatory</p>
+      <h1 class="headline">Chart the most active<br />corners of GitHub.</h1>
+      <p class="subhead">
+        Search any topic. Results are ranked by how recently and how energetically
+        a project is being pushed forward — not just by star count.
+      </p>
+
+      <form class="search-row" id="search-form">
+        <div class="field">
+          <label for="topic">Topic</label>
+          <input id="topic" name="topic" type="text" placeholder="rust, llm, game-engine…" autocomplete="off" />
+        </div>
+        <div class="field field--narrow">
+          <label for="language">Language <span>(optional)</span></label>
+          <input id="language" name="language" type="text" placeholder="any" autocomplete="off" />
+        </div>
+        <button type="submit" class="btn-primary">Search repos</button>
+      </form>
+
+      <div class="sort-toggle" role="group" aria-label="Sort order">
+        <button type="button" class="pill is-active" data-sort="active">Most active</button>
+        <button type="button" class="pill" data-sort="popular">Most popular</button>
+      </div>
+
+      <div class="suggestions" id="suggestions">
+        <span>Try:</span>
+        <button type="button" class="chip" data-topic="rust">rust</button>
+        <button type="button" class="chip" data-topic="llm">llm</button>
+        <button type="button" class="chip" data-topic="game-engine">game-engine</button>
+        <button type="button" class="chip" data-topic="web-framework">web-framework</button>
+        <button type="button" class="chip" data-topic="data-visualization">data-visualization</button>
+      </div>
+    </header>
+
+    <section class="results" id="results-section" aria-live="polite">
+      <p class="meta-line" id="meta-line"></p>
+      <div class="error-box" id="error-box" hidden></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <footer class="footer">
+      <p>Data via the GitHub REST API. Activity index blends recency of pushes with stars and forks on a log scale.</p>
+    </footer>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
