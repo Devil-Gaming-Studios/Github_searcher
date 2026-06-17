@@ -124,7 +124,9 @@ async function runSearch() {
   if (language) params.set('language', language);
 
   try {
-    const res = await fetch(`/api/search?${params.toString()}`);
+    const res = await fetch(`/api/search?${params.toString()}`, {
+  headers: { 'X-Api-Key': 'bkguyguyfuvdr6etufry6dertyfvyretyf 7vre67gbyufr6ew' }
+  }); 
     const data = await res.json();
 
     if (!res.ok) {
