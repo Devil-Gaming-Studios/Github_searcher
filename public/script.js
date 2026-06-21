@@ -1,13 +1,13 @@
-const form = document.getElementById('search-form');
-const topicInput = document.getElementById('topic');
-const languageInput = document.getElementById('language');
-const grid = document.getElementById('grid');
-const metaLine = document.getElementById('meta-line');
-const errorBox = document.getElementById('error-box');
-const sortButtons = document.querySelectorAll('.pill');
-const chips = document.querySelectorAll('.chip');
+// const form = document.getElementById('search-form');
+// const topicInput = document.getElementById('topic');
+// const languageInput = document.getElementById('language');
+// const grid = document.getElementById('grid');
+// const metaLine = document.getElementById('meta-line');
+// const errorBox = document.getElementById('error-box');
+// const sortButtons = document.querySelectorAll('.pill');
+// const chips = document.querySelectorAll('.chip');
 
-let currentSort = 'active';
+// let currentSort = 'active';
 
 function setSort(sort) {
   currentSort = sort;
