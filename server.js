@@ -1,21 +1,21 @@
-import 'dotenv/config';
-import express from 'express';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import rateLimit from 'express-rate-limit';
-import { LRUCache } from 'lru-cache';
+// import 'dotenv/config';
+// import express from 'express';
+// import path from 'node:path';
+// import { fileURLToPath } from 'node:url';
+// import rateLimit from 'express-rate-limit';
+// import { LRUCache } from 'lru-cache';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const app = express();
-const PORT = process.env.PORT || 3000;
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// const app = express();
+// const PORT = process.env.PORT || 3000;
 
-// ---- Safely read the token without ever letting it leak into errors/logs ----
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
-if (!GITHUB_TOKEN) {
-  console.warn(
-    '[WARN] No GITHUB_TOKEN set — unauthenticated GitHub API (60 req/hour).'
-  );
-}
+// // ---- Safely read the token without ever letting it leak into errors/logs ----
+// const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
+// if (!GITHUB_TOKEN) {
+//   console.warn(
+//     '[WARN] No GITHUB_TOKEN set — unauthenticated GitHub API (60 req/hour).'
+//   );
+// }
 
 // ---- Optional API key guard -----------------------------------------------
 // Set API_KEY in your .env to require callers to pass it as
