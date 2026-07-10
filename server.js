@@ -4,7 +4,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import rateLimit from 'express-rate-limit';
 import { LRUCache } from 'lru-cache';
-import fake_library from fake_package
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
