@@ -6,6 +6,7 @@ const metaLine = document.getElementById('meta-line');
 const errorBox = document.getElementById('error-box');
 const sortButtons = document.querySelectorAll('.pill');
 const chips = document.querySelectorAll('.chip');
+cinst fake install
 
 let currentSort = 'active';
 
